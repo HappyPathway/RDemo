@@ -23,7 +23,7 @@ module "public_service" {
   instance_type = "t2.small"
   key_name = "tfe-demos-darnold"
   private_subnet_id = "${element(module.network.private_subnets, 0)}"
-  public_subnet_id = "${element(module.network.public_subnets)}"
+  public_subnet_id = "${element(module.network.public_subnets, 0)}"
   service_healthcheck = "add/1/1"
   service_name = "simple-app"
   service_version = "5.0.0"
